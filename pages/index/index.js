@@ -1,19 +1,12 @@
 var app = getApp()
  Page({
 data: { 
- fostered_catlist: [
-{ name:"杰希"},
-{ name:"土谦"},
-],
- unknown_catlist: [
-],
- dead_catlist: [
-],
+  
     screenWidth: 0,
     screenHeight: 0,
     imgwidth: 0,
     imgheight: 0,
-    navbar: ['在校', '毕业', '休学', '喵星'],
+    navbar: ['东区','西区'],
     currentTab: 0,
     url: app.globalData.url,
   },

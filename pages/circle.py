@@ -31,7 +31,7 @@ for i in range(12, rowNum):
         rowlist.append(cell)
     data_list.append(rowlist)
 
-# print(data_list)
+print(data_list)
 
 
 #  输出所有单元格的内容
@@ -83,7 +83,7 @@ for i in range(rowNum):
         json_line[j[1]] = j[2](data_list[i][j[0]])
 
     data_json.append(json_line)
-    # print(json_line)
+    print(json_line)
 
 # 创建猫文件夹
 if not os.path.exists('cats'):

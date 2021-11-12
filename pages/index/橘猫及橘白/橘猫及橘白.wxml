@@ -1,6 +1,12 @@
 <!--index.wxml-->
 
-<block wx:for="{{catlist}}">
+<view class="navbar">
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<view hidden="{{currentTab!==0}}">
+
+<block wx:for="{{catlistdongqu}}">
   <navigator url="/pages/cats/{{item.name}}/{{item.name}}" >
     <view class="catitem">
       <image  class = 'avator ' src="{{url}}{{item.name}}.png" mode='aspectFill' ></image>
@@ -10,4 +16,18 @@
 
   <view class="divLine"></view>
   
-</block>
+</block></view>
+
+<view hidden="{{currentTab!==1}}">
+
+<block wx:for="{{catlistxiqu}}">
+  <navigator url="/pages/cats/{{item.name}}/{{item.name}}" >
+    <view class="catitem">
+      <image  class = 'avator ' src="{{url}}{{item.name}}.png" mode='aspectFill' ></image>
+      <view class= "cat-name">{{item.name}}</view> 
+    </view>
+  </navigator>
+
+  <view class="divLine"></view>
+  
+</block></view>

@@ -13,6 +13,10 @@
 
 <view hidden="{{currentTab!==1}}">
 
+  <view class="head1">标题2</view>
+
+  <view class="body">另一个主体内容</view>
+
 </view>
 
 <view hidden="{{currentTab!==2}}">

@@ -3,7 +3,7 @@
 <view class= "title">仙交猫协</view>
 <navigator url="/pages/about/web/web">
 <view style="display:flex; justify-content:center; align-items:center;">
-  <image mode="widthFix" src="/pages/images/huihui.jpg" style= "width: 93%;">
+  <image mode="widthFix" src="/pages/images/maomao.jpg" style= "width: 93%;">
   </image>
 </view>
 </navigator>

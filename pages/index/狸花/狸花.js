@@ -1,15 +1,32 @@
 var app = getApp()
  Page({
 data: { 
- catlist: [
+ catlistdongqu: [
+   {name : "一帆"},
 
-    ],
+],
+ catlistxiqu: [
+  {name : "薏米"},
+
+],
     screenWidth: 0,
     screenHeight: 0,
     imgwidth: 0,
     imgheight: 0,
     url: app.globalData.url,
+    navbar: ['东区','西区'],
+    currentTab: 0,
   },
+
+  navbarTap: function (e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  },
+
+  iconType: [
+    'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
+  ],
 
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()
