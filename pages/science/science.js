@@ -1,6 +1,6 @@
 Page({
 data: { 
-  navbar: ['喂食', '疾病', '领养', '绝育', '撸猫'],
+  navbar: ['喂食', '疾病', '绝育'],
   currentTab: 0,
   },
   navbarTap: function (e) {

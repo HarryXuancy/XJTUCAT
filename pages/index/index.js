@@ -1,12 +1,27 @@
 var app = getApp()
  Page({
 data: { 
-  
+ fostered_catlist: [
+{ name:"贵族妹妹"},
+],
+ unknown_catlist: [
+{ name:"刀疤"},
+{ name:"花茶"},
+{ name:"贵族哥哥"},
+{ name:"仙子"},
+{ name:"奶黄包"},
+{ name:"黄油面包"},
+{ name:"汤圆"},
+{ name:"熊猫"},
+{ name:"三三"},
+],
+ dead_catlist: [
+],
     screenWidth: 0,
     screenHeight: 0,
     imgwidth: 0,
     imgheight: 0,
-    navbar: ['东区','西区'],
+    navbar: ['在校', '毕业', '休学', '喵星'],
     currentTab: 0,
     url: app.globalData.url,
   },

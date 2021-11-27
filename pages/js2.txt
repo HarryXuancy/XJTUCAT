@@ -5,7 +5,19 @@
     imgwidth: 0,
     imgheight: 0,
     url: app.globalData.url,
+    navbar: ['东区','西区'],
+    currentTab: 0,
   },
+
+  navbarTap: function (e) {
+    this.setData({
+      currentTab: e.currentTarget.dataset.idx
+    })
+  },
+
+  iconType: [
+    'success', 'success_no_circle', 'info', 'warn', 'waiting', 'cancel', 'download', 'search', 'clear'
+  ],
 
   onPullDownRefresh:function(){
     wx.stopPullDownRefresh()

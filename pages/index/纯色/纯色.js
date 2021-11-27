@@ -2,13 +2,11 @@ var app = getApp()
  Page({
 data: { 
  catlistdongqu: [
-   {name : "小黄鸭"},
-
-],
+{ name:"小白"}, 
+ ], 
  catlistxiqu: [
-  {name : "薏米"},
 
-],
+    ],
     screenWidth: 0,
     screenHeight: 0,
     imgwidth: 0,

@@ -65,10 +65,11 @@ labels = [
     [15, '第一次目击', lambda x: str(x)],
     [20, '送养时间', lambda x:str(x)],
     [21, '离世时间', lambda x:x],
-    [13, '外貌', lambda x:x],
+    [13, '简介', lambda x:x],
     [18, '更多', lambda x:x],
     [17, '关系', lambda x: str(x)],
-    [23, '是否加音频', lambda x:x]
+    [23, '是否加音频', lambda x:x],
+    [24, '校区', lambda x: '东区' if x == 0 else '西区' if x == 1 else '未知']
 ]
 
 data_json = []
@@ -110,7 +111,7 @@ for line in data_json:
                 if j[1] == '名字':
                     print(str(line[j[1]]))
                     continue
-                if j[0] == 23:
+                if j[0] == 23 or j[0] == 24:
                     continue
                 if str(line[j[1]]) == '' or j[1] == '是否写入图鉴':
                     continue
@@ -161,12 +162,18 @@ health = []
 fostered = []
 dead = []
 unknown = []
-nainiu = []
-sanhua = []
-chunse = []
-lihua = []
-ju = []
-suoyou = []
+nainiudongqu = []
+nainiuxiqu = []
+sanhuadongqu = []
+sanhuaxiqu = []
+chunsedongqu = []
+chunsexiqu = []
+lihuadongqu = []
+lihuaxiqu = []
+judongqu = []
+juxiqu = []
+suoyoudongqu = []
+suoyouxiqu = []
 
 
 #  分类
@@ -179,19 +186,31 @@ for i in range(rowNum):
         if (data_list[i][9] == '不明' or data_list[i][9] == '许久未见' or data_list[i][9] == '失踪'):
             unknown.append(data_list[i][2])
         if (data_list[i][9] == '健康' or data_list[i][9] == '口炎'):
-            if data_list[i][6] == 1:
-                lihua.append(data_list[i][2])
-            if data_list[i][6] == 2:
-                ju.append(data_list[i][2])
-            if data_list[i][6] == 3:
-                nainiu.append(data_list[i][2])
-            if data_list[i][6] == 4:
-                sanhua.append(data_list[i][2])
-            if data_list[i][6] == 5:
-                chunse.append(data_list[i][2])
+            if data_list[i][6] == 1 and data_list[i][24] == 0:
+                lihuadongqu.append(data_list[i][2])
+            if data_list[i][6] == 1 and data_list[i][24] == 1:
+                lihuaxiqu.append(data_list[i][2])
+            if data_list[i][6] == 2 and data_list[i][24] == 0:
+                judongqu.append(data_list[i][2])
+            if data_list[i][6] == 2 and data_list[i][24] == 1:
+                juxiqu.append(data_list[i][2])
+            if data_list[i][6] == 3 and data_list[i][24] == 0:
+               nainiudongqu.append(data_list[i][2])
+            if data_list[i][6] == 3 and data_list[i][24] == 1:
+               nainiuxiqu.append(data_list[i][2])
+            if data_list[i][6] == 4 and data_list[i][24] == 0:
+                sanhuadongqu.append(data_list[i][2])
+            if data_list[i][6] == 4 and data_list[i][24] == 1:
+               sanhuaxiqu.append(data_list[i][2])
+            if data_list[i][6] == 5 and data_list[i][24] == 0:
+                chunsedongqu.append(data_list[i][2])
+            if data_list[i][6] == 5 and data_list[i][24] == 1:
+                chunsexiqu.append(data_list[i][2])
 
-health = lihua + ju + nainiu + sanhua + chunse
-suoyou = health
+# health = lihua + ju + nainiu + sanhua + chunse
+suoyoudongqu = lihuadongqu + judongqu + nainiudongqu + sanhuadongqu + chunsedongqu
+suoyouxiqu = lihuaxiqu + juxiqu + nainiuxiqu + sanhuaxiqu + chunsexiqu
+health = suoyoudongqu + suoyouxiqu
 
 # 调整寄养的时间顺序
 try:
@@ -211,9 +230,12 @@ if not os.path.exists('index/奶牛'):
     os.makedirs('index/' + '奶牛')  # 创建每只猫的文件夹
     # 创建js文件
 with open('index/奶牛/奶牛' + '.js', 'w', encoding='utf-8') as f:
-    f.write('var app = getApp()\n Page({\ndata: { \n catlist: [\n')
-    for name in nainiu:
+    f.write('var app = getApp()\n Page({\ndata: { \n catlistdongqu: [\n')
+    for name in nainiudongqu:
         f.write('{ name:"'+name+'"},')
+    f.write(' \n ], \n catlistxiqu: [\n')
+    for name in nainiuxiqu:
+        f.write(('{ name:"'+name+'"},'))
     with open('js2.txt', 'r', encoding='utf-8') as f2:
         f.write(f2.read())
 
@@ -222,9 +244,12 @@ if not os.path.exists('index/狸花'):
     os.makedirs('index/' + '狸花')  # 创建每只猫的文件夹
     # 创建js文件
 with open('index/狸花/狸花' + '.js', 'w', encoding='utf-8') as f:
-    f.write('var app = getApp()\n Page({\ndata: { \n catlist: [\n')
-    for name in lihua:
+    f.write('var app = getApp()\n Page({\ndata: { \n catlistdongqu: [\n')
+    for name in lihuadongqu:
         f.write('{ name:"'+name+'"},')
+    f.write(' \n ], \n catlistxiqu: [\n')
+    for name in lihuaxiqu:
+        f.write(('{ name:"'+name+'"},'))
     with open('js2.txt', 'r', encoding='utf-8') as f2:
         f.write(f2.read())
 
@@ -233,9 +258,12 @@ if not os.path.exists('index/玳瑁及三花'):
     os.makedirs('index/' + '玳瑁及三花')  # 创建每只猫的文件夹
     # 创建js文件
 with open('index/玳瑁及三花/玳瑁及三花' + '.js', 'w', encoding='utf-8') as f:
-    f.write('var app = getApp()\n Page({\ndata: { \n catlist: [\n')
-    for name in sanhua:
+    f.write('var app = getApp()\n Page({\ndata: { \n catlistdongqu: [\n')
+    for name in sanhuadongqu:
         f.write('{ name:"'+name+'"},')
+    f.write(' \n ], \n catlistxiqu: [\n')
+    for name in sanhuaxiqu:
+        f.write(('{ name:"'+name+'"},'))
     with open('js2.txt', 'r', encoding='utf-8') as f2:
         f.write(f2.read())
 
@@ -244,9 +272,12 @@ if not os.path.exists('index/纯色'):
     os.makedirs('index/' + '纯色')  # 创建每只猫的文件夹
     # 创建js文件
 with open('index/纯色/纯色' + '.js', 'w', encoding='utf-8') as f:
-    f.write('var app = getApp()\n Page({\ndata: { \n catlist: [\n')
-    for name in chunse:
+    f.write('var app = getApp()\n Page({\ndata: { \n catlistdongqu: [\n')
+    for name in chunsedongqu:
         f.write('{ name:"'+name+'"},')
+    f.write(' \n ], \n catlistxiqu: [\n')
+    for name in chunsexiqu:
+        f.write(('{ name:"'+name+'"},'))
     with open('js2.txt', 'r', encoding='utf-8') as f2:
         f.write(f2.read())
 
@@ -255,9 +286,12 @@ if not os.path.exists('index/橘猫及橘白'):
     os.makedirs('index/' + '橘猫及橘白')  # 创建每只猫的文件夹
     # 创建js文件
 with open('index/橘猫及橘白/橘猫及橘白' + '.js', 'w', encoding='utf-8') as f:
-    f.write('var app = getApp()\n Page({\ndata: { \n catlist: [\n')
-    for name in ju:
+    f.write('var app = getApp()\n Page({\ndata: { \n catlistdongqu: [\n')
+    for name in judongqu:
         f.write('{ name:"'+name+'"},')
+    f.write(' \n ], \n catlistxiqu: [\n')
+    for name in juxiqu:
+        f.write(('{ name:"'+name+'"},'))
     with open('js2.txt', 'r', encoding='utf-8') as f2:
         f.write(f2.read())
 
@@ -266,9 +300,12 @@ if not os.path.exists('index/所有'):
     os.makedirs('index/' + '所有')  # 创建每只猫的文件夹
     # 创建js文件
 with open('index/所有/所有' + '.js', 'w', encoding='utf-8') as f:
-    f.write('var app = getApp()\n Page({\ndata: { \n catlist: [\n')
-    for name in suoyou:
+    f.write('var app = getApp()\n Page({\ndata: { \n catlistdongqu: [\n')
+    for name in suoyoudongqu:
         f.write('{ name:"'+name+'"},')
+    f.write(' \n ], \n catlistxiqu: [\n')
+    for name in suoyouxiqu:
+        f.write(('{ name:"'+name+'"},'))
     with open('js2.txt', 'r', encoding='utf-8') as f2:
         f.write(f2.read())
 
@@ -294,4 +331,4 @@ with open('index/index' + '.js', 'w', encoding='utf-8') as f:
         f.write(f2.read())
 
 
-# print(fostered)
+# # print(fostered)

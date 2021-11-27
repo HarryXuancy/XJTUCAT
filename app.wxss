@@ -49,11 +49,15 @@
   margin-left: 40rpx;
   margin-right: 40rpx;
   line-height:25rpx;
-  margin-bottom: 20rpx;
+  margin-bottom: 30rpx;
   margin-top: 40rpx;
   font-weight:bold;
   color:black;
   text-align: left;
+}
+
+.konghang{
+height:20rpx;
 }
 
 .body {
@@ -67,7 +71,6 @@
   line-height: 55rpx;
   text-align: justify;
 }
-
 
 
 .bodybold {
@@ -84,7 +87,7 @@
 
 /*每一只猫*/
 .catitem{
-  height: 3.7rem;
+  height: 115rpx;
   display: flex;
   align-items: center;
   width: 100%;
@@ -102,7 +105,7 @@
 .cat-name{
   font-size: 30rpx;
   flex-direction:row;
-  margin-left: 5rem;
+  margin-left: 60rpx;
   color:#353535;
   text-align: center;
 }
@@ -110,16 +113,32 @@
 /*搜索框*/
 .search{
   font-size: 30rpx;
-  position: absolute;
-  margin-left: 5rem;
-  margin-top: 0.7rem;
+  position: absolute; 
+  margin-left: 80rpx;
+  margin-top: 26rpx;
+  height: 54rpx;
+}
+
+.input{
+  height: 54rpx;
+  margin-left: 120rpx
+}
+
+.donate{
+  font-weight: bold;
+  flex-direction: row;
+  display: inline;
+}
+
+.yuanjiao{
+  border-radius: 30%;
 }
 
 .avator {
-  width: 3rem;
-  height: 3rem;
+  width: 100rpx;
+  height: 100rpx;
   margin-left: 40rpx;
-  position: absolute;
+  position: relative; 
   align-items: center;
   display:flex;
 }

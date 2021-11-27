@@ -1,17 +1,19 @@
 <!--index.wxml-->
 
-<image  class = 'avator ' src="/pages/images/circle.png" mode='aspectFill' ></image>
+<view>
+  <image  class = 'avator ' src="/pages/images/77.png" mode='aspectFill' ></image>
+</view>
 <view class="search">
-<input placeholder="请输入猫咪名称" bindconfirm="bindconfirmT" placeholder-class="placeholder" />
+<input class = "input" placeholder="请输入猫咪名称" bindconfirm="bindconfirmT" placeholder-class="placeholder" ></input>
 </view>
 
-<text> \n\n </text>
+<!-- <text class="huanhang"> \n\n\n\n</text> -->
 
-<!--
+
 <view class="navbar">
   <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
 </view>
--->
+
 
 <!-- 在校 -->
 <view hidden="{{currentTab!==0}}">

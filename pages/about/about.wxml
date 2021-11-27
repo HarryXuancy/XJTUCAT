@@ -3,28 +3,47 @@
 <view class= "title">仙交猫协</view>
 <navigator url="/pages/about/web/web">
 <view style="display:flex; justify-content:center; align-items:center;">
-  <image mode="widthFix" src="/pages/images/maomao.jpg" style= "width: 93%;">
+  <image class="yuanjiao" mode="heightFix" src="/pages/images/maomao.jpg" style= "height: 700rpx;">
   </image>
 </view>
 </navigator>
 
 <text> \n </text>
 
-<!-- 最好能保留这一行 -->
-<view class="body">此小程序所有代码开源，可在 GitHub 上搜索「北大猫协」，配有教学视频，简单易用。 </view>
+<view class="body">
+<text class="bodybold">关于我们</text>
+</view>
 
+<view class='body'>仙交猫猫（以下简称“仙猫”），是西安交通大学学生自发组成的非营利性关爱猫咪组织，成立于2021年11月。组织成立初衷是保护和关爱校园流浪猫，保障它们在校园中的生活。猫猫们也是学校的一部分，关爱猫猫，让西安交通大学的校园和谐而温馨。
+<view class="konghang"></view>
+仙猫分为财务及外联部、人事及策划部、信息部、文创部、宣传部、技术部、志愿部七个部门，每个部门进行不同活动，共同完成协会活动。</view>
+
+<view class="body">
+<text class="bodybold">捐助我们</text>
+</view>
+
+<view class="body" >如果您想为学校里的猫猫提供资金支持，请点击
+<navigator class="donate" url="/pages/about/donate/donate" >这里</navigator>
+，了解更多。
+</view>
 
 <text> \n </text>
 
-<view class="staff">2020-08-16</view>
+<!-- 最好能保留这一行 -->
+<view class="staff">此小程序修改自【北大猫协】的开源代码 </view>
+
+<!-- <view class="staff">2020-08-16</view> -->
 
 <view class="staff">
-小程序开发：circle
+源码提供者：circle
+</view>
+
+<view class="staff">
 </view>
 
 <view  class = "itemname1">
-  <view bindtap="naviToMini" style='flex-shrink:0; box-sizing:border-box; width:3rem; margin-right:1rem;'>
-    <image style="width:3rem;height:3rem;" src="/pages/images/circle.png" ></image>
+  <view bindtap="naviToMini" style='flex-shrink:0; box-sizing:border-box; width:112.5rpx; margin-right:37.5rpx;'>
+    <image style="width:112.5rpx;height:112.5rpx;" src="/pages/images/circle.png" ></image>
     <view style="text-align: center;  color:#353535;" > \n 高校动保索引 </view>  
   </view>
 </view>
