@@ -65,7 +65,8 @@ App({
 
   globalData: {
     userInfo: null,
-    url: "https://pku-lostangel.oss-cn-beijing.aliyuncs.com/",
+    // url: "https://pku-lostangel.oss-cn-beijing.aliyuncs.com/",
+    url: "cloud://cloud1-6gwsd4ch6a2f06a4.636c-cloud1-6gwsd4ch6a2f06a4-1308217141/",
   },
   
 

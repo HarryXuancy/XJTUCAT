@@ -2,10 +2,10 @@ var app = getApp()
  Page({
 data: { 
  catlistdongqu: [
-{ name:"胖虎"},{ name:"车车"},{ name:"小怂包"},{ name:"中分"},{ name:"大中分"},{ name:"斜刘海"},{ name:"警长"},{ name:"花姐姐"},{ name:"花妹妹"},{ name:"媒婆"},{ name:"馆长"},{ name:"花耳"},{ name:"假面"},{ name:"铁皮"},{ name:"玳瑁"},{ name:"小白"}, 
+{ name:"胖虎"},{ name:"渣贵"},{ name:"小怂包"},{ name:"小中分"},{ name:"狗蛋儿"},{ name:"喵桑"},{ name:"花妹妹"},{ name:"馆长"},{ name:"贵族妹妹"}, 
  ], 
  catlistxiqu: [
-
+{ name:"豹纹"},{ name:"博士"},{ name:"大呆"},{ name:"二宁"},{ name:"烦烦"},{ name:"黑狸"},{ name:"横眉"},{ name:"虎纹"},{ name:"蒲公英"},{ name:"小狼崽"},{ name:"小宁"},{ name:"小椅子"},{ name:"sunshine"},{ name:"不苦"},{ name:"大胖橘"},{ name:"二黄"},{ name:"掘地武士"},{ name:"面包"},{ name:"闹闹"},{ name:"委屈屈"},{ name:"刀哥"},{ name:"葛优"},{ name:"咕咕"},{ name:"咪咪"},{ name:"墨翠"},{ name:"花漂亮"},{ name:"杰克船长"},{ name:"罗恩"},{ name:"抹布"},{ name:"薛定谔"},{ name:"纯黑"},{ name:"大白"},{ name:"小黑"},
     ],
     screenWidth: 0,
     screenHeight: 0,

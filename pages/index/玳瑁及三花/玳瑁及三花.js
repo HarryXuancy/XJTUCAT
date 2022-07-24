@@ -2,10 +2,10 @@ var app = getApp()
  Page({
 data: { 
  catlistdongqu: [
-{ name:"花姐姐"},{ name:"花妹妹"},{ name:"媒婆"},{ name:"馆长"},{ name:"花耳"},{ name:"假面"},{ name:"铁皮"},{ name:"玳瑁"}, 
+{ name:"花妹妹"},{ name:"馆长"},{ name:"贵族妹妹"}, 
  ], 
  catlistxiqu: [
-
+{ name:"花漂亮"},{ name:"杰克船长"},{ name:"罗恩"},{ name:"抹布"},{ name:"薛定谔"},
     ],
     screenWidth: 0,
     screenHeight: 0,

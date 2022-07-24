@@ -53,7 +53,7 @@ labels = [
     [3, '是否写入图鉴', lambda x:x],
     [4, '昵称', lambda x:x],
     [5, '毛色', lambda x:x],
-    # [7, '出没地点', lambda x: str(x)],
+    [7, '居住地', lambda x: str(x)],
     [8, '性别', lambda x:'公' if x == 1 else '母' if x == 0 else '未知'],
     [9, '状况', lambda x:'不明' if len(x) < 1 else x],
     [10, '绝育情况', lambda x:'已绝育' if x ==
@@ -61,7 +61,7 @@ labels = [
     [11, '绝育时间', lambda x:str(x)],
     [12, '出生时间', lambda x:x],
     [14, '性格', lambda x: '亲人可抱' if x == 6 else '亲人不可抱 可摸' if x == 5 else '薛定谔亲人' if x == 4 else '吃东西时可以一直摸' if x ==
-        3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离 1m 以内' if x == 1 else '怕人 安全距离 1m 以外' if x == 0 else '未知 数据缺失'],
+        3 else '吃东西时可以摸一下' if x == 2 else '怕人 安全距离 1m 以内' if x == 1 else '怕人 安全距离 1m 以外' if x == 0 else x],
     [15, '第一次目击', lambda x: str(x)],
     [20, '送养时间', lambda x:str(x)],
     [21, '离世时间', lambda x:x],
@@ -69,7 +69,7 @@ labels = [
     [18, '更多', lambda x:x],
     [17, '关系', lambda x: str(x)],
     [23, '是否加音频', lambda x:x],
-    [24, '校区', lambda x: '东区' if x == 0 else '西区' if x == 1 else '未知']
+    [24, '校区', lambda x: '东区' if x == 0 else '西区' if x == 1 else '不在校内']
 ]
 
 data_json = []
@@ -162,6 +162,7 @@ health = []
 fostered = []
 dead = []
 unknown = []
+boarding = []
 nainiudongqu = []
 nainiuxiqu = []
 sanhuadongqu = []
@@ -179,13 +180,15 @@ suoyouxiqu = []
 #  分类
 for i in range(rowNum):
     if data_list[i][3] != '':
-        if data_list[i][9] == '离世':
+        if data_list[i][9] == '喵星':
             dead.append((data_list[i][2], data_list[i][21]))
-        if data_list[i][9] == '送养':
+        if data_list[i][9] == '留学':
+            boarding.append((data_list[i][2], data_list[i][21]))
+        if data_list[i][9] == '毕业':
             fostered.append((data_list[i][2], data_list[i][20]))
-        if (data_list[i][9] == '不明' or data_list[i][9] == '许久未见' or data_list[i][9] == '失踪'):
+        if (data_list[i][9] == '休学'):
             unknown.append(data_list[i][2])
-        if (data_list[i][9] == '健康' or data_list[i][9] == '口炎'):
+        if (data_list[i][9] == '在校'):
             if data_list[i][6] == 1 and data_list[i][24] == 0:
                 lihuadongqu.append(data_list[i][2])
             if data_list[i][6] == 1 and data_list[i][24] == 1:
@@ -325,6 +328,11 @@ with open('index/index' + '.js', 'w', encoding='utf-8') as f:
     #  dead
     f.write(' dead_catlist: [\n')
     for name in dead:
+        f.write('{ name:"'+name[0]+'"},\n')
+    f.write('],\n')
+    #  boarding
+    f.write(' boarding_catlist: [\n')
+    for name in boarding:
         f.write('{ name:"'+name[0]+'"},\n')
     f.write('],\n')
     with open('js_index.txt', 'r', encoding='utf-8') as f2:

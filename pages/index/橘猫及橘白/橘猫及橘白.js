@@ -5,7 +5,7 @@ data: {
  
  ], 
  catlistxiqu: [
-
+{ name:"sunshine"},{ name:"不苦"},{ name:"大胖橘"},{ name:"二黄"},{ name:"掘地武士"},{ name:"面包"},{ name:"闹闹"},{ name:"委屈屈"},
     ],
     screenWidth: 0,
     screenHeight: 0,

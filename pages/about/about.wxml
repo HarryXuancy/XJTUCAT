@@ -1,9 +1,9 @@
 <!--index.wxml-->
 
-<view class= "title">仙交猫协</view>
+<view class= "title">仙喵</view>
 <navigator url="/pages/about/web/web">
 <view style="display:flex; justify-content:center; align-items:center;">
-  <image class="yuanjiao" mode="heightFix" src="/pages/images/maomao.jpg" style= "height: 700rpx;">
+  <image class="yuanjiao" mode="heightFix" src="/pages/images/仙喵.png" style= "height: 630rpx;">
   </image>
 </view>
 </navigator>

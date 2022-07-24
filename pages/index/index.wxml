@@ -1,7 +1,7 @@
 <!--index.wxml-->
 
 <view>
-  <image  class = 'avator ' src="/pages/images/77.png" mode='aspectFill' ></image>
+  <image  class = 'avator ' src="/pages/images/仙喵.png" mode='aspectFill' ></image>
 </view>
 <view class="search">
 <input class = "input" placeholder="请输入猫咪名称" bindconfirm="bindconfirmT" placeholder-class="placeholder" ></input>
@@ -22,7 +22,7 @@
 
 <navigator url="/pages/index/玳瑁及三花/玳瑁及三花" >
   <view class="catitem">
-    <image  class = 'avator ' src="{{url}}花灵灵.png" mode='aspectFill' ></image>
+    <image  class = 'avator ' src="{{url}}馆长.png" mode='aspectFill' ></image>
     <view class="cat-name">三花和玳瑁</view> 
   </view>
 </navigator>
@@ -31,7 +31,7 @@
 
 <navigator url="/pages/index/橘猫及橘白/橘猫及橘白" >
   <view class="catitem">
-    <image  class = 'avator ' src="{{url}}畅蠢.png" mode='aspectFill' ></image>
+    <image  class = 'avator ' src="{{url}}龙龙.png" mode='aspectFill' ></image>
     <view class= "cat-name">橘猫和橘白</view>
   </view>
 </navigator>
@@ -40,7 +40,7 @@
 
 <navigator url="/pages/index/纯色/纯色" >
   <view class="catitem">
-    <image  class = 'avator ' src="{{url}}薏米.png" mode='aspectFill' ></image>
+    <image  class = 'avator ' src="{{url}}lucky.png" mode='aspectFill' ></image>
     <view class= "cat-name">纯色</view>
   </view>
 </navigator>
@@ -50,7 +50,7 @@
 
 <navigator url="/pages/index/奶牛/奶牛" >
   <view class="catitem">
-    <image  class = 'avator ' src="{{url}}英杰.png" mode='aspectFill' ></image>
+    <image  class = 'avator ' src="{{url}}小中分.png" mode='aspectFill' ></image>
     <view class= "cat-name">奶牛</view>
   </view>
 </navigator>
@@ -59,7 +59,7 @@
 
 <navigator url="/pages/index/狸花/狸花" >
   <view class="catitem">
-    <image  class = 'avator ' src="{{url}}山竹.png" mode='aspectFill' ></image>
+    <image  class = 'avator ' src="{{url}}渣贵.png" mode='aspectFill' ></image>
     <view class= "cat-name">狸花</view>
   </view>
 </navigator>
@@ -68,7 +68,7 @@
 
 <navigator url="/pages/index/所有/所有" >
   <view class="catitem">
-    <image  class = 'avator ' src="/pages/images/circle.png" mode='aspectFill' ></image>
+    <image  class = 'avator ' src="/pages/images/仙喵.png" mode='aspectFill' ></image>
     <view class= "cat-name">所有</view>
   </view>
 </navigator>
@@ -133,6 +133,22 @@
 
 <view hidden="{{currentTab!==3}}">
     <block wx:for="{{dead_catlist}}">
+  <navigator url="/pages/cats/{{item.name}}/{{item.name}}" >
+    <view class="catitem">
+      <image  class = 'avator ' lazy-load src="{{url}}{{item.name}}.png" mode='aspectFill' ></image>
+      <view class= "cat-name">{{item.name}}</view> 
+    </view>
+  </navigator>
+
+  <view class="divLine"></view>
+  
+</block>
+</view>
+
+<!-- 休学 -->
+
+<view hidden="{{currentTab!==4}}">
+    <block wx:for="{{boarding_catlist}}">
   <navigator url="/pages/cats/{{item.name}}/{{item.name}}" >
     <view class="catitem">
       <image  class = 'avator ' lazy-load src="{{url}}{{item.name}}.png" mode='aspectFill' ></image>

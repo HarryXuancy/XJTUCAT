@@ -2,10 +2,10 @@ var app = getApp()
  Page({
 data: { 
  catlistdongqu: [
-{ name:"小白"}, 
+ 
  ], 
  catlistxiqu: [
-
+{ name:"纯黑"},{ name:"大白"},{ name:"小黑"},
     ],
     screenWidth: 0,
     screenHeight: 0,

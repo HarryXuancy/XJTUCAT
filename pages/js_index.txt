@@ -2,7 +2,7 @@
     screenHeight: 0,
     imgwidth: 0,
     imgheight: 0,
-    navbar: ['在校', '毕业', '休学', '喵星'],
+    navbar: ['在校', '毕业', '休学', '喵星','留学'],
     currentTab: 0,
     url: app.globalData.url,
   },

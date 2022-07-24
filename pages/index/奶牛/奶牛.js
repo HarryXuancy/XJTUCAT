@@ -2,10 +2,10 @@ var app = getApp()
  Page({
 data: { 
  catlistdongqu: [
-{ name:"小怂包"},{ name:"中分"},{ name:"大中分"},{ name:"斜刘海"},{ name:"警长"}, 
+{ name:"小怂包"},{ name:"小中分"},{ name:"狗蛋儿"},{ name:"喵桑"}, 
  ], 
  catlistxiqu: [
-
+{ name:"刀哥"},{ name:"葛优"},{ name:"咕咕"},{ name:"咪咪"},{ name:"墨翠"},
     ],
     screenWidth: 0,
     screenHeight: 0,
